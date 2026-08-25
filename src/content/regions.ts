@@ -26,7 +26,7 @@ const brskOperator: Operator = {
   },
   support: {
     phone: '8 800 347-11-11',
-    phoneHref: '88003471111',
+    phoneHref: '+78003471111',
     email: 'tp@brsc.ru',
   },
   // Первоисточник по тарифам, балансу и точкам — всегда сайт оператора:

@@ -30,7 +30,8 @@ export const organizationJsonLd = {
   url: site.url,
   description: site.description,
   email: site.email,
-  telephone: site.phone,
+  // E.164, а не человекочитаемый формат: разметку читают роботы
+  telephone: site.phoneHref,
   areaServed: { '@type': 'Country', name: 'Россия' },
 }
 
