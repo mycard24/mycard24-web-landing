@@ -1,0 +1,10 @@
+const rubles = new Intl.NumberFormat('ru-RU', {
+  style: 'currency',
+  currency: 'RUB',
+  maximumFractionDigits: 0,
+})
+
+export function formatPrice(value: number): string {
+  // Intl ставит перед знаком рубля неразрывный пробел — заменяем на обычный
+  return rubles.format(value).replace(' ₽', ' ₽')
+}

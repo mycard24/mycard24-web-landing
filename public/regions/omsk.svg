@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Успенский собор в Омске">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#e6f4ff"/>
+      <stop offset="50%" stop-color="#e9e6fb"/>
+      <stop offset="100%" stop-color="#fdeadd"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2350"/>
+      <stop offset="100%" stop-color="#333d72"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="640" cy="164" r="60" fill="#ffffff" opacity="0.5"/>
+
+  <path d="M0 478 L170 448 L340 480 L500 444 L660 478 L800 452 L800 600 L0 600 Z" fill="#1c2350" opacity="0.13"/>
+
+  <g fill="url(#ink)">
+    <!-- основной объём -->
+    <path d="M256 600 L256 428 L544 428 L544 600 Z"/>
+    <path d="M320 428 L320 336 L480 336 L480 428 Z"/>
+
+    <!-- центральный барабан и купол -->
+    <path d="M368 336 L368 272 L432 272 L432 336 Z"/>
+    <path d="M400 176 C 366 214 352 240 352 258 C 352 268 362 272 400 272 C 438 272 448 268 448 258 C 448 240 434 214 400 176 Z"/>
+    <path d="M396 142 L404 142 L404 180 L396 180 Z"/>
+    <path d="M382 156 L418 156 L418 164 L382 164 Z"/>
+
+    <!-- боковые главы -->
+    <path d="M292 336 L292 296 L332 296 L332 336 Z"/>
+    <path d="M312 236 C 290 264 282 280 282 292 C 282 299 290 302 312 302 C 334 302 342 299 342 292 C 342 280 334 264 312 236 Z"/>
+    <path d="M308 210 L316 210 L316 240 L308 240 Z"/>
+
+    <path d="M468 336 L468 296 L508 296 L508 336 Z"/>
+    <path d="M488 236 C 466 264 458 280 458 292 C 458 299 466 302 488 302 C 510 302 518 299 518 292 C 518 280 510 264 488 236 Z"/>
+    <path d="M484 210 L492 210 L492 240 L484 240 Z"/>
+
+    <!-- боковые пристройки -->
+    <path d="M198 600 L198 470 L256 470 L256 600 Z"/>
+    <path d="M544 600 L544 470 L602 470 L602 600 Z"/>
+  </g>
+
+  <g fill="#ffffff" opacity="0.5">
+    <path d="M352 500 h30 v70 a15 15 0 0 1 -30 0 Z"/>
+    <path d="M418 500 h30 v70 a15 15 0 0 1 -30 0 Z"/>
+    <path d="M286 512 h26 v58 a13 13 0 0 1 -26 0 Z"/>
+    <path d="M488 512 h26 v58 a13 13 0 0 1 -26 0 Z"/>
+    <path d="M384 366 h32 v44 a16 16 0 0 1 -32 0 Z"/>
+  </g>
+</svg>

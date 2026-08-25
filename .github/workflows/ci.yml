@@ -1,0 +1,25 @@
+# Проверки на develop и в пул-реквестах. Прод-деплой живёт в deploy.yml.
+name: CI
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      # Сборка целиком: пререндер ловит то, что не видит tsc, — например
+      # падение компонента при рендере в строку
+      - run: npm run build

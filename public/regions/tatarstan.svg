@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Мечеть Кул-Шариф в Казани">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#d8f1fb"/>
+      <stop offset="50%" stop-color="#e4e7fb"/>
+      <stop offset="100%" stop-color="#f7e6f0"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2350"/>
+      <stop offset="100%" stop-color="#33407a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="188" cy="146" r="66" fill="#ffffff" opacity="0.55"/>
+
+  <path d="M0 470 L160 440 L320 472 L480 436 L640 470 L800 444 L800 600 L0 600 Z" fill="#1c2350" opacity="0.14"/>
+
+  <g fill="url(#ink)">
+    <!-- основание -->
+    <path d="M250 600 L250 452 L550 452 L550 600 Z"/>
+    <!-- центральный объём -->
+    <path d="M312 452 L312 340 L488 340 L488 452 Z"/>
+    <!-- главный купол -->
+    <path d="M400 232 C 356 268 336 300 336 328 C 336 336 340 340 350 340 L450 340 C 460 340 464 336 464 328 C 464 300 444 268 400 232 Z"/>
+    <path d="M396 196 L404 196 L404 236 L396 236 Z"/>
+    <circle cx="400" cy="188" r="9"/>
+    <!-- малые купола -->
+    <path d="M330 296 C 312 316 302 332 302 344 L358 344 C 358 332 348 316 330 296 Z"/>
+    <path d="M470 296 C 452 316 442 332 442 344 L498 344 C 498 332 488 316 470 296 Z"/>
+    <!-- минареты -->
+    <path d="M236 600 L236 300 L268 300 L268 600 Z"/>
+    <path d="M252 244 C 236 272 230 288 230 300 L274 300 C 274 288 268 272 252 244 Z"/>
+    <path d="M532 600 L532 300 L564 300 L564 600 Z"/>
+    <path d="M548 244 C 532 272 526 288 526 300 L570 300 C 570 288 564 272 548 244 Z"/>
+    <path d="M176 600 L176 356 L202 356 L202 600 Z"/>
+    <path d="M189 310 C 176 334 171 346 171 356 L207 356 C 207 346 202 334 189 310 Z"/>
+    <path d="M598 600 L598 356 L624 356 L624 600 Z"/>
+    <path d="M611 310 C 598 334 593 346 593 356 L629 356 C 629 346 624 334 611 310 Z"/>
+  </g>
+
+  <g fill="#ffffff" opacity="0.5">
+    <rect x="342" y="378" width="26" height="58" rx="13"/>
+    <rect x="387" y="378" width="26" height="58" rx="13"/>
+    <rect x="432" y="378" width="26" height="58" rx="13"/>
+    <rect x="290" y="494" width="24" height="54" rx="12"/>
+    <rect x="486" y="494" width="24" height="54" rx="12"/>
+  </g>
+</svg>

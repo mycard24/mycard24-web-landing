@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Памятник Салавату Юлаеву в Уфе">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#ffe3b8"/>
+      <stop offset="45%" stop-color="#ffc7cf"/>
+      <stop offset="100%" stop-color="#d8dcf5"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2350"/>
+      <stop offset="100%" stop-color="#2f3868"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="610" cy="150" r="72" fill="#ffffff" opacity="0.5"/>
+
+  <!-- дальние холмы -->
+  <path d="M0 452 L120 410 L232 444 L360 396 L470 438 L610 392 L720 430 L800 408 L800 600 L0 600 Z" fill="#2f3868" opacity="0.14"/>
+  <path d="M0 496 L150 462 L300 494 L448 456 L586 492 L720 464 L800 486 L800 600 L0 600 Z" fill="#1c2350" opacity="0.2"/>
+
+  <g fill="url(#ink)">
+    <!-- постамент -->
+    <path d="M352 452 L448 452 L470 600 L330 600 Z"/>
+    <!-- круп и корпус коня -->
+    <ellipse cx="392" cy="392" rx="76" ry="36"/>
+    <!-- шея и голова -->
+    <path d="M452 388 L500 330 L520 300 L536 306 L524 344 L494 388 Z"/>
+    <path d="M516 300 L540 288 L546 300 L528 312 Z"/>
+    <!-- поднятые передние ноги -->
+    <path d="M448 400 L494 372 L502 386 L456 418 Z"/>
+    <path d="M440 412 L482 400 L486 414 L444 428 Z"/>
+    <!-- опорные задние ноги -->
+    <path d="M340 404 L358 452 L342 456 L322 408 Z"/>
+    <path d="M372 412 L384 452 L368 456 L354 416 Z"/>
+    <!-- хвост -->
+    <path d="M318 380 L282 404 L272 440 L292 428 L316 400 Z"/>
+    <!-- всадник -->
+    <path d="M384 356 L400 296 L418 300 L406 358 Z"/>
+    <circle cx="406" cy="284" r="15"/>
+    <!-- поднятая рука с плетью -->
+    <path d="M404 306 L456 268 L464 280 L412 320 Z"/>
+    <path d="M456 268 L488 236 L494 244 L462 278 Z"/>
+  </g>
+</svg>

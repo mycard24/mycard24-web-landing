@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Спасская башня Московского Кремля">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#ffe6ea"/>
+      <stop offset="50%" stop-color="#e6e4fa"/>
+      <stop offset="100%" stop-color="#dceefb"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2350"/>
+      <stop offset="100%" stop-color="#343c74"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="182" cy="158" r="68" fill="#ffffff" opacity="0.5"/>
+
+  <path d="M0 486 L180 458 L360 488 L520 452 L680 486 L800 460 L800 600 L0 600 Z" fill="#1c2350" opacity="0.13"/>
+
+  <g fill="url(#ink)">
+    <!-- крепостная стена -->
+    <path d="M0 600 L0 486 L800 486 L800 600 Z"/>
+    <g>
+      <path d="M64 486 L64 462 L96 462 L96 486 Z"/>
+      <path d="M136 486 L136 462 L168 462 L168 486 Z"/>
+      <path d="M208 486 L208 462 L240 462 L240 486 Z"/>
+      <path d="M560 486 L560 462 L592 462 L592 486 Z"/>
+      <path d="M632 486 L632 462 L664 462 L664 486 Z"/>
+      <path d="M704 486 L704 462 L736 462 L736 486 Z"/>
+    </g>
+
+    <!-- нижний четверик -->
+    <path d="M320 600 L320 336 L480 336 L480 600 Z"/>
+    <path d="M310 336 L490 336 L490 316 L310 316 Z"/>
+
+    <!-- ярус с часами -->
+    <path d="M338 316 L338 232 L462 232 L462 316 Z"/>
+    <path d="M330 232 L470 232 L470 216 L330 216 Z"/>
+
+    <!-- восьмерик -->
+    <path d="M356 216 L356 168 L444 168 L444 216 Z"/>
+
+    <!-- шатёр -->
+    <path d="M400 60 L452 168 L348 168 Z"/>
+    <path d="M396 34 L404 34 L404 64 L396 64 Z"/>
+  </g>
+
+  <!-- звезда -->
+  <path d="M400 8 L409 27 L430 30 L415 45 L419 66 L400 56 L381 66 L385 45 L370 30 L391 27 Z" fill="#ec1e79"/>
+
+  <!-- циферблат -->
+  <circle cx="400" cy="274" r="34" fill="#ffffff" opacity="0.85"/>
+  <g stroke="#1c2350" stroke-width="4" stroke-linecap="round">
+    <path d="M400 274 L400 254"/>
+    <path d="M400 274 L414 284"/>
+  </g>
+
+  <g fill="#ffffff" opacity="0.45">
+    <path d="M356 400 h30 v66 a15 15 0 0 1 -30 0 Z"/>
+    <path d="M414 400 h30 v66 a15 15 0 0 1 -30 0 Z"/>
+  </g>
+</svg>

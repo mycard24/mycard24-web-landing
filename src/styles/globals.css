@@ -1,0 +1,130 @@
+@import '@fontsource-variable/inter/wght.css';
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Дизайн-токены МояКарта24.
+   Палитра выведена из логотипа (docs/prototypes/logo.svg): янтарный «парус»,
+   пурпурная карта, бирюзовый «парус». Поверхности намеренно нейтральные —
+   цвет живёт в акцентах и градиентах, а не в фонах.
+--------------------------------------------------------------------------- */
+@theme {
+  /* Шрифт лежит в node_modules и попадает в сборку — без запроса к Google */
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Нейтральные */
+  --color-ink: #12162e;
+  --color-ink-soft: #3c4362;
+  --color-ink-muted: #6b7391;
+  --color-line: #e7eaf3;
+  --color-line-strong: #d5dae8;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f6f7fb;
+  --color-surface-sunk: #eef1f8;
+
+  /* Бренд */
+  --color-brand-amber: #f9a825;
+  --color-brand-orange: #fb6d3a;
+  --color-brand-magenta: #ec1e79;
+  --color-brand-pink: #ff4d6d;
+  --color-brand-cyan: #22c3e6;
+  --color-brand-teal: #0fb6de;
+
+  /* Семантика */
+  --color-available: #0f9d76;
+  --color-available-soft: #e6f6f1;
+
+  --radius-card: 1.25rem;
+  --radius-tile: 1.5rem;
+
+  --ease-swipe: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-magenta);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* --- Утилиты бренда ------------------------------------------------------ */
+
+@utility gradient-brand {
+  background-image: linear-gradient(
+    115deg,
+    var(--color-brand-amber) 0%,
+    var(--color-brand-magenta) 52%,
+    var(--color-brand-cyan) 100%
+  );
+}
+
+@utility gradient-cta {
+  background-image: linear-gradient(
+    115deg,
+    var(--color-brand-orange) 0%,
+    var(--color-brand-magenta) 100%
+  );
+}
+
+@utility text-gradient-brand {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-brand-orange) 0%,
+    var(--color-brand-magenta) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+/* Мягкое цветное свечение под герой-сценой */
+@utility brand-glow {
+  background:
+    radial-gradient(38% 46% at 22% 26%, color-mix(in oklab, var(--color-brand-amber) 34%, transparent), transparent 70%),
+    radial-gradient(46% 52% at 70% 42%, color-mix(in oklab, var(--color-brand-magenta) 26%, transparent), transparent 72%),
+    radial-gradient(44% 50% at 46% 84%, color-mix(in oklab, var(--color-brand-cyan) 30%, transparent), transparent 74%);
+}
+
+/* Горизонтальная лента: прокрутка остаётся, полоса скрыта */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* --- Аккордеон FAQ на нативном <details> --------------------------------- */
+
+.faq-item[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
