@@ -40,6 +40,34 @@ export const legal = {
 } as const
 
 /**
+ * Юридические документы. Живут на отдельном поддомене docs.mycard24.ru —
+ * их правит юрист, и лендинг не должен требовать пересборки из-за правки
+ * в оферте. Отсюда абсолютные ссылки, а не свои страницы.
+ *
+ * TODO: вернуть https, когда GitHub выпустит сертификат для поддомена. Сейчас
+ * его нет (Pages ещё провижинит), и по https поддомен не отвечает вовсе —
+ * недоступная оферта хуже, чем оферта по http. Проверить:
+ *   gh api repos/mycard24/mycard24-docs-site/pages --jq .https_certificate.state
+ */
+const DOCS_ORIGIN = 'http://docs.mycard24.ru'
+
+export const legalDocs = [
+  { id: 'offer', label: 'Публичная оферта', href: `${DOCS_ORIGIN}/legal/offer/` },
+  { id: 'terms', label: 'Пользовательское соглашение', href: `${DOCS_ORIGIN}/legal/terms/` },
+  {
+    id: 'consent',
+    label: 'Согласие на обработку данных',
+    href: `${DOCS_ORIGIN}/legal/consent/`,
+  },
+  {
+    id: 'privacy',
+    label: 'Политика обработки персональных данных',
+    href: `${DOCS_ORIGIN}/legal/privacy_policy/`,
+  },
+  { id: 'cookies', label: 'Политика в отношении cookie', href: `${DOCS_ORIGIN}/legal/cookies/` },
+] as const
+
+/**
  * Соцсети компании в подвале.
  *
  * TODO: подставить адреса каналов. Пока href пустой, кнопка рисуется, но не

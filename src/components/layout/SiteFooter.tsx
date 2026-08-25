@@ -1,6 +1,6 @@
 import { AppLink } from '@/components/ui/AppLink'
 import { regions } from '@/content/regions'
-import { legal, nav, site, socials } from '@/content/site'
+import { legal, legalDocs, nav, site, socials } from '@/content/site'
 import { cn } from '@/lib/cn'
 import { Logo } from '@/components/brand/Logo'
 import { Container } from '@/components/ui/Container'
@@ -44,11 +44,6 @@ function SocialButton({ social }: { social: (typeof socials)[number] }) {
     </a>
   )
 }
-
-const legalLinks = [
-  { href: '/privacy', label: 'Политика конфиденциальности' },
-  { href: '/offer', label: 'Оферта' },
-]
 
 export function SiteFooter() {
   return (
@@ -134,14 +129,16 @@ export function SiteFooter() {
               </li>
             </ul>
             <ul className="mt-5 grid gap-2.5">
-              {legalLinks.map((item) => (
-                <li key={item.href}>
-                  <AppLink
-                    href={item.href}
+              {legalDocs.map((doc) => (
+                <li key={doc.id}>
+                  <a
+                    href={doc.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-ink-muted transition-colors hover:text-ink"
                   >
-                    {item.label}
-                  </AppLink>
+                    {doc.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -177,11 +174,24 @@ export function SiteFooter() {
             является эмитентом карт и оказывает услуги по приёму заявок и доставке.
           </p>
           <p className="mt-4 max-w-4xl text-[0.6875rem] leading-relaxed text-line-strong text-pretty">
-            Продолжая использовать наш сайт, вы даёте согласие на обработку файлов cookies и
-            других пользовательских данных, в соответствии с{' '}
-            <AppLink href="/privacy" className="underline underline-offset-2 transition-colors hover:text-ink-muted">
+            Продолжая использовать наш сайт, вы даёте согласие на обработку{' '}
+            <a
+              href={legalDocs[4].href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-ink-muted"
+            >
+              файлов cookies
+            </a>{' '}
+            и других пользовательских данных, в соответствии с{' '}
+            <a
+              href={legalDocs[3].href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-ink-muted"
+            >
               Политикой конфиденциальности
-            </AppLink>
+            </a>
             .
           </p>
         </div>

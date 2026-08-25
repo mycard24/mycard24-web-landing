@@ -5,8 +5,6 @@ import { head as regionsHead } from '@/pages/RegionsPage'
 import { head as deliveryHead } from '@/pages/DeliveryPage'
 import { head as faqHead } from '@/pages/FaqPage'
 import { head as contactsHead } from '@/pages/ContactsPage'
-import { head as offerHead } from '@/pages/OfferPage'
-import { head as privacyHead } from '@/pages/PrivacyPage'
 import { head as regionHead } from '@/pages/RegionPage'
 import { head as cardHead } from '@/pages/CardPage'
 
@@ -24,8 +22,6 @@ export const pages: PageHead[] = [
   deliveryHead,
   faqHead,
   contactsHead,
-  offerHead,
-  privacyHead,
   // Только запущенные регионы: у остальных страниц нет — ни в пререндере,
   // ни в sitemap, ни в клиентской навигации.
   ...availableRegions.flatMap((region) => [

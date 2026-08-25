@@ -10,8 +10,6 @@ import DeliveryPage from '@/pages/DeliveryPage'
 import FaqPage from '@/pages/FaqPage'
 import HomePage from '@/pages/HomePage'
 import NotFoundPage, { head as notFoundHead } from '@/pages/NotFoundPage'
-import OfferPage from '@/pages/OfferPage'
-import PrivacyPage from '@/pages/PrivacyPage'
 import RegionPage from '@/pages/RegionPage'
 import RegionsPage from '@/pages/RegionsPage'
 
@@ -64,8 +62,6 @@ export function App() {
           <Route path="/delivery" element={<DeliveryPage />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/offer" element={<OfferPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
           {/* Динамические маршруты идут последними: статические сегменты
               выигрывают у параметров по рангу, но так читается яснее. */}
           <Route path="/:region" element={<RegionPage />} />
