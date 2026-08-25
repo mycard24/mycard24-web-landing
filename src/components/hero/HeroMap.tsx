@@ -82,10 +82,11 @@ export function HeroMap({
         className="size-full"
       >
         <defs>
+          {/* Тот же ряд цветов, что у знака: янтарь → маджента → оранжевый */}
           <linearGradient id="mc24-region" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#fb6d3a" />
-            <stop offset="52%" stopColor="#ec1e79" />
-            <stop offset="100%" stopColor="#22c3e6" />
+            <stop offset="0%" stopColor="#F7A529" />
+            <stop offset="52%" stopColor="#F02B66" />
+            <stop offset="100%" stopColor="#EF5A2A" />
           </linearGradient>
 
 

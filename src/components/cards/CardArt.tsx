@@ -104,7 +104,7 @@ export function CardArt({
           />
           <div
             className="pointer-events-none absolute -bottom-[38%] -left-[18%] size-[80%] rounded-full opacity-40 blur-2xl"
-            style={{ background: 'radial-gradient(circle, #22c3e6 0%, rgba(34,195,230,0) 70%)' }}
+            style={{ background: 'radial-gradient(circle, #EF5A2A 0%, rgba(239,90,42,0) 70%)' }}
           />
           <div className="absolute inset-0 flex flex-col justify-between p-[6.5cqw]">
             <div className="flex items-start justify-between">

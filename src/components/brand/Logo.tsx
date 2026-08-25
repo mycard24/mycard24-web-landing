@@ -32,15 +32,16 @@ const WING_TOP =
   'C 1090.348 6681.001 5335.368 6681.002 5335.368 6681.002 C 5335.368 6681.002 2171.145 8158.939 1710 8081 Z'
 
 const WING_BOTTOM =
-  'M 2287.35 2662.81 C 2053.95 2623.37 1934.34 2475.81 1796.34 2149.81 ' +
-  'C 1546.34 1555.81 1456.34 1345.81 1421.34 1275.81 C 1373.34 1178.81 1394.39 1149.11 1470.34 1208.81 ' +
-  'C 1504.16 1235.4 1580.11 1262.81 1611.31 1262.81 C 1667.68 1262.81 5912.71 1262.81 5912.71 1262.81 ' +
-  'C 5912.71 1262.81 2748.49 2740.75 2287.35 2662.81 Z'
+  'M 2069.29 2662.81 C 1625.042 2567.864 1212.66 1260.905 1212.66 1260.905 L 5694.65 1262.81 C 5694.65 1262.81 2526.641 2760.557 2069.29 2662.81 Z'
+
+/** Общий transform знака: из координат исходника в систему viewBox */
+const MARK_TRANSFORM =
+  'matrix(0.10424054554563966, 0, 0, -0.10424054554563966, -172.22549275672077, 559.5182683940803)'
 
 export function LogoMark({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg
-      viewBox="-0.0124 39.5412 365.8954 460.4588"
+      viewBox="-107.3632 -283.1237 572.1141 714.7858"
       className={cn('block', className)}
       role="img"
       aria-label="МояКарта24"
@@ -48,33 +49,31 @@ export function LogoMark({ className, ...props }: SVGProps<SVGSVGElement>) {
     >
       <defs>
         <linearGradient id="mc24-wing-top" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#fdc23c" />
-          <stop offset="100%" stopColor="#f79420" />
+          <stop offset="0%" stopColor="#FFCF63" />
+          <stop offset="100%" stopColor="#F7A529" />
         </linearGradient>
         <linearGradient id="mc24-card" x1="0.1" y1="0" x2="0.9" y2="1">
-          <stop offset="0%" stopColor="#f0247a" />
-          <stop offset="55%" stopColor="#ee2270" />
-          <stop offset="100%" stopColor="#ff4d5f" />
+          <stop offset="0%" stopColor="#F02B66" />
+          <stop offset="100%" stopColor="#C61050" />
         </linearGradient>
         <linearGradient id="mc24-wing-bottom" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#2ad0ee" />
-          <stop offset="100%" stopColor="#0fa8d6" />
+          <stop offset="0%" stopColor="#FF8A52" />
+          <stop offset="100%" stopColor="#EF5A2A" />
         </linearGradient>
       </defs>
 
-      <g
-        transform="matrix(0.06666700541973114, 0, 0, -0.06666700541973114, -41.49505233764651, 578.4757690429688)"
-        stroke="none"
-      >
-        <path d={WING_TOP} fill="url(#mc24-wing-top) #f9a825" />
+      <g stroke="none">
+        <path d={WING_TOP} fill="url(#mc24-wing-top) #F7A529" transform={MARK_TRANSFORM} />
+        {/* Нижнее крыло — то же, развёрнутое на 180°. Точка вращения внесена
+            прямо в матрицу: transform-origin и transform-box — это CSS, и
+            конвертеры svg → png их игнорируют, роняя крыло мимо холста. */}
         <path
           d={WING_BOTTOM}
-          fill="url(#mc24-wing-bottom) #22c3e6"
-          style={{ transformBox: 'fill-box', transformOrigin: '50% 50%' }}
-          transform="matrix(-1, 0.000399, -0.000399, -1, 0, 0)"
+          fill="url(#mc24-wing-bottom) #EF5A2A"
+          transform="matrix(-0.10424056, -0.00004159, -0.00004159, 0.10424056, 547.039616, 153.661773)"
         />
-        <path d={CARD_OUTLINE} fill="url(#mc24-card) #ec1e79" />
-        <path d={CARD_CHECK} fill="#ffffff" />
+        <path d={CARD_OUTLINE} fill="url(#mc24-card) #C61050" transform={MARK_TRANSFORM} />
+        <path d={CARD_CHECK} fill="#ffffff" transform={MARK_TRANSFORM} />
       </g>
     </svg>
   )

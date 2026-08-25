@@ -26,8 +26,6 @@
   --color-brand-orange: #fb6d3a;
   --color-brand-magenta: #ec1e79;
   --color-brand-pink: #ff4d6d;
-  --color-brand-cyan: #22c3e6;
-  --color-brand-teal: #0fb6de;
 
   /* Семантика */
   --color-available: #0f9d76;
@@ -75,15 +73,6 @@
 
 /* --- Утилиты бренда ------------------------------------------------------ */
 
-@utility gradient-brand {
-  background-image: linear-gradient(
-    115deg,
-    var(--color-brand-amber) 0%,
-    var(--color-brand-magenta) 52%,
-    var(--color-brand-cyan) 100%
-  );
-}
-
 @utility gradient-cta {
   background-image: linear-gradient(
     115deg,
@@ -107,7 +96,7 @@
   background:
     radial-gradient(38% 46% at 22% 26%, color-mix(in oklab, var(--color-brand-amber) 34%, transparent), transparent 70%),
     radial-gradient(46% 52% at 70% 42%, color-mix(in oklab, var(--color-brand-magenta) 26%, transparent), transparent 72%),
-    radial-gradient(44% 50% at 46% 84%, color-mix(in oklab, var(--color-brand-cyan) 30%, transparent), transparent 74%);
+    radial-gradient(44% 50% at 46% 84%, color-mix(in oklab, var(--color-brand-orange) 30%, transparent), transparent 74%);
 }
 
 /* Горизонтальная лента: прокрутка остаётся, полоса скрыта */
