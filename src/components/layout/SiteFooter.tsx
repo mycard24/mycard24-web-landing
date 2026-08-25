@@ -49,7 +49,13 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-surface-soft py-10">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))]">
+        <div
+          className={cn(
+            'grid gap-10 sm:grid-cols-2',
+            // Документам колонка пошире: названия юридические и длинные
+            'lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.75fr)_minmax(0,0.95fr)_minmax(0,1.2fr)_minmax(0,0.85fr)]',
+          )}
+        >
           <div>
             <Logo />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-muted text-pretty">
@@ -108,6 +114,24 @@ export function SiteFooter() {
             </ul>
           </nav>
 
+          <nav aria-label="Документы">
+            <h2 className="text-sm font-semibold text-ink">Документы</h2>
+            <ul className="mt-4 grid gap-2.5">
+              {legalDocs.map((doc) => (
+                <li key={doc.id}>
+                  <a
+                    href={doc.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-ink-muted transition-colors hover:text-ink"
+                  >
+                    {doc.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
           <div>
             <h2 className="text-sm font-semibold text-ink">Контакты</h2>
             <ul className="mt-4 grid gap-2.5 text-sm text-ink-muted">
@@ -127,20 +151,6 @@ export function SiteFooter() {
                   {site.phone}
                 </a>
               </li>
-            </ul>
-            <ul className="mt-5 grid gap-2.5">
-              {legalDocs.map((doc) => (
-                <li key={doc.id}>
-                  <a
-                    href={doc.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-ink-muted transition-colors hover:text-ink"
-                  >
-                    {doc.label}
-                  </a>
-                </li>
-              ))}
             </ul>
           </div>
         </div>

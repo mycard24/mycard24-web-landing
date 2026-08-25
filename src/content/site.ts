@@ -44,12 +44,12 @@ export const legal = {
  * их правит юрист, и лендинг не должен требовать пересборки из-за правки
  * в оферте. Отсюда абсолютные ссылки, а не свои страницы.
  *
- * TODO: вернуть https, когда GitHub выпустит сертификат для поддомена. Сейчас
- * его нет (Pages ещё провижинит), и по https поддомен не отвечает вовсе —
- * недоступная оферта хуже, чем оферта по http. Проверить:
+ * ВНИМАНИЕ: сертификат для поддомена GitHub ещё не выпустил, по https он пока
+ * не отвечает — ссылки на документы работать не будут, пока Pages не выдаст
+ * сертификат. Состояние:
  *   gh api repos/mycard24/mycard24-docs-site/pages --jq .https_certificate.state
  */
-const DOCS_ORIGIN = 'http://docs.mycard24.ru'
+const DOCS_ORIGIN = 'https://docs.mycard24.ru'
 
 export const legalDocs = [
   { id: 'offer', label: 'Публичная оферта', href: `${DOCS_ORIGIN}/legal/offer/` },

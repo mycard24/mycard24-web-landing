@@ -158,7 +158,7 @@ npx sharp-cli -i original.png -o public/regions -f webp -q 78 resize 640
 - [ ] Сверить с оператором тексты FAQ, тарифы и виды транспорта (в `regions.ts` помечены `TODO`)
 - [ ] Тарифы на проезд: сейчас на сайте их нет, а «выгоднее наличных» — заявлено
 - [ ] Определить отпускную цену карты: сейчас указана закупочная (130 ₽), маржа нулевая
-- [ ] Вернуть `https` в `DOCS_ORIGIN` (`src/content/site.ts`), как только GitHub выпустит сертификат для `docs.mycard24.ru` — сейчас поддомен по https не отвечает
+- [ ] **Ссылки на документы не работают**: `DOCS_ORIGIN` уже на `https`, но GitHub ещё не выпустил сертификат для `docs.mycard24.ru`. Проверить: `gh api repos/mycard24/mycard24-docs-site/pages --jq .https_certificate.state`
 - [ ] Поднять почту на домене: `info@mycard24.ru` уже стоит в контактах, но MX-записей у `mycard24.ru` нет — домен смотрит только на GitHub Pages
 - [ ] Фотографии регионов вместо SVG-заглушек (+ webp-варианты и `landmark.srcSet`)
 - [ ] OG-изображение для соцсетей
