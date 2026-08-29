@@ -50,24 +50,24 @@ Netlify, Cloudflare Pages и GitHub Pages делают это сами).
 | Ветка | Что делает |
 | --- | --- |
 | `develop` | Рабочая. На пуш и в PR гоняется CI: `typecheck`, `lint`, полная сборка |
-| `production` | Боевая. Пуш публикует сайт на GitHub Pages |
+| `production` | Боевая. Пуш собирает образ, кладёт его в GHCR и выкатывает на сервер |
 
-Публикует [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml): собирает
-`dist/` и отдаёт его в Pages. Выкатить прод — влить `develop` в `production`:
+Раньше сайт жил на GitHub Pages. Теперь — на том же VPS, что и API: один хост терминирует TLS,
+один wildcard-сертификат, одно место, куда смотреть, когда что-то не так.
 
 ```bash
 git switch production && git merge --ff-only develop && git push
 ```
 
-Домен — `mycard24.ru`, лежит в [`public/CNAME`](public/CNAME) и попадает в `dist`
-при каждой сборке. Файл обязателен: без него Pages сбрасывает привязку домена.
-Тот же адрес прописан в `site.url` — от него считаются canonical, sitemap и JSON-LD.
+CD собирает образ (тег — SHA коммита), пишет `.env` на сервере и перезапускает контейнер. На сервере
+ничего не собирается. Откат — перезапуск воркфлоу со старым SHA в `image_tag`.
 
-Один раз в настройках репозитория нужно выбрать **Settings → Pages → Source:
-GitHub Actions**, а у домена — направить DNS на Pages (A-записи на
-`185.199.108–111.153` для `mycard24.ru` и `CNAME` на `<owner>.github.io` для
-`www`). Базовый путь сайта — корень, поэтому `base` в `vite.config.ts` не нужен;
-он понадобился бы только при публикации в подкаталог вида `/repo/`.
+Контейнер отдаёт файлы через `static-web-server`, а не через nginx: nginx уже стоит перед ним на
+хосте, и второй внутри означал бы два конфига про одну и ту же маршрутизацию. Подробности —
+[deploy/README.md](deploy/README.md).
+
+Домен — `mycard24.ru`, DNS указывает на VPS. `public/CNAME` больше не нужен и удалён: он был нужен
+только Pages.
 
 ## Структура URL
 

@@ -1,0 +1,37 @@
+# Production stack for the landing. This is the ONLY compose file CD copies to the server.
+#
+# One container, no database, no volumes: the prerendered site is baked into the image, so the image
+# tag IS the release. Host nginx terminates TLS — see deploy/nginx/mycard24.ru.conf.
+
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "5"
+
+services:
+  mycard24-web-landing:
+    #   ROLLBACK: set IMAGE_TAG to a previous commit SHA in .env, then
+    #             `docker compose pull && docker compose up -d`. Or re-run Deploy with that SHA.
+    image: ${IMAGE:-ghcr.io/mycard24/mycard24-web-landing}:${IMAGE_TAG:-latest}
+    pull_policy: always
+    container_name: mycard24-web-landing
+    restart: unless-stopped
+    logging: *default-logging
+
+    # Fronted by host nginx. Never bound to 0.0.0.0.
+    ports:
+      - "127.0.0.1:${LANDING_PORT:-8087}:8080"
+
+    healthcheck:
+      # The image has no shell and no curl, so this uses the binary that is already there.
+      test: ["CMD", "/usr/local/bin/static-web-server", "--version"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+    deploy:
+      resources:
+        limits:
+          memory: ${LANDING_MEMORY_LIMIT:-128M}
